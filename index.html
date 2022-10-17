@@ -6,74 +6,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="./CSS/styles.css">
 
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.js"
-        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous">
-        </script>
+    <script type="text/javascript" src="/Jquery/FC1.js"></script>
 
     <title>HALA</title>
 </head>
 
 <body>
     <header>
-        <a href="#"><img src="images/LOGO_IUH.PNG" class="img-fluid m-0" alt=""></a>
-        <div id="title" class="text-uppercase text-center fw-bold">Đề Tài: Thiết kế hệ thống lưu kho tự động và giám sát bằng mã QR</div>
-        <nav class="navbar navbar-expand-md bg-light sticky-top p-0">
+        <a href="#"><img src="images/LOGO_IUH.PNG" title="Trường Đại học Công nghiệp Thành phố Hồ Chí Minh"
+                class="img-fluid m-0" alt=""></a>
+        <div id="title" class="text-uppercase text-center fw-bold">Đề Tài: Thiết kế hệ thống lưu kho tự động và giám sát
+            bằng mã QR</div>
+        <nav class="navbar navbar-expand-md bg-light sticky-top p-0" id="navbar">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="./images/logo_HALA.png" height="60px" alt="Logo">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./images/logo_HALA.png" title="logo_HALA" height="60px" alt="Logo">
                     HALA
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarResponsive">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto ">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle" id="bt_introduce" href="index.html" role="button"
                                 aria-expanded="false">
                                 INTRODUCE
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#TongQuan">TỔNG QUAN</a></li>
-                                    <hr class="dropdown-divider">
-                                <li><a class="dropdown-item" href="#MoHinh">MÔ HÌNH</a></li>
+                                <li><a class="dropdown-item" id="bt_tongquan" href="#TongQuan">TỔNG QUAN</a></li>
+                                <hr class="dropdown-divider">
+                                <li><a class="dropdown-item" id="bt_mohinh" href="#MoHinh">MÔ HÌNH</a></li>
                                 <li>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link" id="bt_control" href="#control">
                                 CONTROL
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">AUTO</a></li>
-                                    <hr class="dropdown-divider">
-                                <li><a class="dropdown-item" href="#">MANUAL</a></li>
-                                <li>
-                                </li>
-                            </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#"> INTRUCTOR</a></li>
+                        <li class="nav-item"><a class="nav-link" id="bt_intructor" href="#intructor"> INTRUCTOR</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" id="bt_member" href="#member" role="button"
                                 aria-expanded="false">
                                 MEMBER
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Bạch Hoàng Ân</a></li>
-                                    <hr class="dropdown-divider">
-                                <li><a class="dropdown-item" href="#">Trần Tiến Anh</a></li>
+                                <li><a class="dropdown-item" id="bt_member1" href="#member1">Bạch Hoàng Ân</a></li>
                                 <hr class="dropdown-divider">
-                                <li><a class="dropdown-item" href="#">Nguyễn Phan Châu Huân</a></li>
+                                <li><a class="dropdown-item" id="bt_member2" href="#member2">Trần Tiến Anh</a></li>
                                 <hr class="dropdown-divider">
-                                <li><a class="dropdown-item" href="#">Nguyễn Thành Luân</a></li>
+                                <li><a class="dropdown-item" id="bt_member3" href="#member3">Nguyễn Phan Châu Huân</a>
+                                </li>
+                                <hr class="dropdown-divider">
+                                <li><a class="dropdown-item" id="bt_member4" href="#member4">Nguyễn Thành Luân</a></li>
                                 <li>
                                 </li>
                             </ul>
@@ -83,22 +76,183 @@
             </div>
         </nav>
     </header>
-    <div id="banner">
-        <img class="img-fluid " src="/images/background-plc.jpg" alt="">
-    </div>
     <div class="container" id="content">
-        <h1 id="TongQuan">Tổng Quan:</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui vel perspiciatis sapiente. Distinctio nulla dolore qui nemo non consequatur ullam quo, asperiores aut repellat nostrum perspiciatis iure odio quos necessitatibus similique, minima quibusdam nesciunt quis modi commodi hic sapiente aspernatur voluptates? Consectetur ab, quasi excepturi eum cum suscipit voluptate? Molestiae nostrum assumenda veritatis dolore, minima numquam itaque quibusdam voluptate commodi maiores nobis doloremque accusantium ducimus veniam ut delectus amet, neque sunt et cumque, dolorum voluptatibus saepe eligendi! Nobis odit optio accusantium in officia? Architecto, molestias. Molestiae qui excepturi quasi similique vero, quis, error, expedita culpa aliquid deserunt blanditiis tempore impedit.</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui vel perspiciatis sapiente. Distinctio nulla dolore qui nemo non consequatur ullam quo, asperiores aut repellat nostrum perspiciatis iure odio quos necessitatibus similique, minima quibusdam nesciunt quis modi commodi hic sapiente aspernatur voluptates? Consectetur ab, quasi excepturi eum cum suscipit voluptate? Molestiae nostrum assumenda veritatis dolore, minima numquam itaque quibusdam voluptate commodi maiores nobis doloremque accusantium ducimus veniam ut delectus amet, neque sunt et cumque, dolorum voluptatibus saepe eligendi! Nobis odit optio accusantium in officia? Architecto, molestias. Molestiae qui excepturi quasi similique vero, quis, error, expedita culpa aliquid deserunt blanditiis tempore impedit.</p>
+        <div id="introduce">
+            <div id="banner">
+                <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui vel perspiciatis sapiente. Distinctio nulla dolore qui nemo non consequatur ullam quo, asperiores aut repellat nostrum perspiciatis iure odio quos necessitatibus similique, minima quibusdam nesciunt quis modi commodi hic sapiente aspernatur voluptates? Consectetur ab, quasi excepturi eum cum suscipit voluptate? Molestiae nostrum assumenda veritatis dolore, minima numquam itaque quibusdam voluptate commodi maiores nobis doloremque accusantium ducimus veniam ut delectus amet, neque sunt et cumque, dolorum voluptatibus saepe eligendi! Nobis odit optio accusantium in officia? Architecto, molestias. Molestiae qui excepturi quasi similique vero, quis, error, expedita culpa aliquid deserunt blanditiis tempore impedit.</p>
-        <h1 id="MoHinh">Mô Hình:</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui vel perspiciatis sapiente. Distinctio nulla dolore qui nemo non consequatur ullam quo, asperiores aut repellat nostrum perspiciatis iure odio quos necessitatibus similique, minima quibusdam nesciunt quis modi commodi hic sapiente aspernatur voluptates? Consectetur ab, quasi excepturi eum cum suscipit voluptate? Molestiae nostrum assumenda veritatis dolore, minima numquam itaque quibusdam voluptate commodi maiores nobis doloremque accusantium ducimus veniam ut delectus amet, neque sunt et cumque, dolorum voluptatibus saepe eligendi! Nobis odit optio accusantium in officia? Architecto, molestias. Molestiae qui excepturi quasi similique vero, quis, error, expedita culpa aliquid deserunt blanditiis tempore impedit.</p>
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                    </div>
+                    
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="/images/background-plc.jpg" alt="" class="d-block">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://www.infoplc.net/media/k2/items/cache/384ad86f2bc78174ef5499506b7b7703_XL.jpg" alt="" class="d-block">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://ctisupply.vn/wp-content/uploads/2020/03/step-7-basic-and-s7-1200.png" alt="" class="d-block">
+                      </div>
+                    </div>
+                    
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                    </button>
+                  </div>
+            </div>
+            <h1 id="TongQuan">Tổng Quan:</h1>
+            <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui vel perspiciatis sapiente. Distinctio nulla
+                dolore qui nemo non consequatur ullam quo, asperiores aut repellat nostrum perspiciatis iure odio quos
+                necessitatibus similique, minima quibusdam nesciunt quis modi commodi hic sapiente aspernatur
+                voluptates?
+                Consectetur ab, quasi excepturi eum cum suscipit voluptate? Molestiae nostrum assumenda veritatis
+                dolore,
+                minima numquam itaque quibusdam voluptate commodi maiores nobis doloremque accusantium ducimus veniam ut
+                delectus amet, neque sunt et cumque, dolorum voluptatibus saepe eligendi! Nobis odit optio accusantium
+                in
+                officia? Architecto, molestias. Molestiae qui excepturi quasi similique vero, quis, error, expedita
+                culpa
+                aliquid deserunt blanditiis tempore impedit.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui vel perspiciatis sapiente. Distinctio nulla
+                dolore qui nemo non consequatur ullam quo, asperiores aut repellat nostrum perspiciatis iure odio quos
+                necessitatibus similique, minima quibusdam nesciunt quis modi commodi hic sapiente aspernatur
+                voluptates?
+                Consectetur ab, quasi excepturi eum cum suscipit voluptate? Molestiae nostrum assumenda veritatis
+                dolore,
+                minima numquam itaque quibusdam voluptate commodi maiores nobis doloremque accusantium ducimus veniam ut
+                delectus amet, neque sunt et cumque, dolorum voluptatibus saepe eligendi! Nobis odit optio accusantium
+                in
+                officia? Architecto, molestias. Molestiae qui excepturi quasi similique vero, quis, error, expedita
+                culpa
+                aliquid deserunt blanditiis tempore impedit.</p>
 
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui vel perspiciatis sapiente. Distinctio nulla dolore qui nemo non consequatur ullam quo, asperiores aut repellat nostrum perspiciatis iure odio quos necessitatibus similique, minima quibusdam nesciunt quis modi commodi hic sapiente aspernatur voluptates? Consectetur ab, quasi excepturi eum cum suscipit voluptate? Molestiae nostrum assumenda veritatis dolore, minima numquam itaque quibusdam voluptate commodi maiores nobis doloremque accusantium ducimus veniam ut delectus amet, neque sunt et cumque, dolorum voluptatibus saepe eligendi! Nobis odit optio accusantium in officia? Architecto, molestias. Molestiae qui excepturi quasi similique vero, quis, error, expedita culpa aliquid deserunt blanditiis tempore impedit.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui vel perspiciatis sapiente. Distinctio nulla
+                dolore qui nemo non consequatur ullam quo, asperiores aut repellat nostrum perspiciatis iure odio quos
+                necessitatibus similique, minima quibusdam nesciunt quis modi commodi hic sapiente aspernatur
+                voluptates?
+                Consectetur ab, quasi excepturi eum cum suscipit voluptate? Molestiae nostrum assumenda veritatis
+                dolore,
+                minima numquam itaque quibusdam voluptate commodi maiores nobis doloremque accusantium ducimus veniam ut
+                delectus amet, neque sunt et cumque, dolorum voluptatibus saepe eligendi! Nobis odit optio accusantium
+                in
+                officia? Architecto, molestias. Molestiae qui excepturi quasi similique vero, quis, error, expedita
+                culpa
+                aliquid deserunt blanditiis tempore impedit.</p> -->
+            <h1 id="MoHinh">Mô Hình:</h1>
+            <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui vel perspiciatis sapiente. Distinctio nulla
+                dolore qui nemo non consequatur ullam quo, asperiores aut repellat nostrum perspiciatis iure odio quos
+                necessitatibus similique, minima quibusdam nesciunt quis modi commodi hic sapiente aspernatur
+                voluptates?
+                Consectetur ab, quasi excepturi eum cum suscipit voluptate? Molestiae nostrum assumenda veritatis
+                dolore,
+                minima numquam itaque quibusdam voluptate commodi maiores nobis doloremque accusantium ducimus veniam ut
+                delectus amet, neque sunt et cumque, dolorum voluptatibus saepe eligendi! Nobis odit optio accusantium
+                in
+                officia? Architecto, molestias. Molestiae qui excepturi quasi similique vero, quis, error, expedita
+                culpa
+                aliquid deserunt blanditiis tempore impedit.</p>
 
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui vel perspiciatis sapiente. Distinctio nulla
+                dolore qui nemo non consequatur ullam quo, asperiores aut repellat nostrum perspiciatis iure odio quos
+                necessitatibus similique, minima quibusdam nesciunt quis modi commodi hic sapiente aspernatur
+                voluptates?
+                Consectetur ab, quasi excepturi eum cum suscipit voluptate? Molestiae nostrum assumenda veritatis
+                dolore,
+                minima numquam itaque quibusdam voluptate commodi maiores nobis doloremque accusantium ducimus veniam ut
+                delectus amet, neque sunt et cumque, dolorum voluptatibus saepe eligendi! Nobis odit optio accusantium
+                in
+                officia? Architecto, molestias. Molestiae qui excepturi quasi similique vero, quis, error, expedita
+                culpa
+                aliquid deserunt blanditiis tempore impedit.</p> -->
+
+        </div>
+        <div id="control">
+            <div class="row">
+                <div class="col-md-8 border bg-primary"style="height: 800px;">
+                    SACADA
+                </div>
+                <div class="col-md-4">
+                    <div class="row border bg-secondary" style="height: 500px;">infor
+                    <p>Tên sản phẩm:</p>
+                    <p>Mã sản phẩm:</p>
+                    <p>Tên sản phẩm:</p>
+                    <p>Tên sản phẩm:</p>
+                    </div>
+                    <div class="row border bg-light " id="panel_auto" style="height: 300px;">panel
+                        <button type="button" class="btn btn-success">run</button>
+                        <button type="button" class="btn btn-danger">stop</button>
+                        <button type="button" class="btn btn-danger">e-stop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="intructor">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image"
+                    style="width:100%">
+                <h1>Th.s Hà Chí Kiên</h1>
+            </div>
+        </div>
+        <div id="member" class="m-0">
+            <div class="row justify-content-center justify-content-between">
+                <div class="card" id="member1" style="width:400px">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Bạch Hoàng Ân</h4>
+                        <p class="card-text">Some example text some example text. John Doe is an architect and
+                            engineer</p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+                <div class="card" id="member2" style="width:400px">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Trần Tiến Anh</h4>
+                        <p class="card-text">Some example text some example text. John Doe is an architect and
+                            engineer</p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center justify-content-between">
+                <div class ="card" id="member3" style="width:400px">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Nguyễn Phan Châu Huân</h4>
+                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer
+                        </p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+                <div class="card" id="member4" style="width:400px">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Nguyễn Thành Luân</h4>
+                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer
+                        </p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+            </div> 
+        </div>
     </div>
-    <div id="back-to-top" class="back-to-top" data-toggle="tooltip" data-placement="left" title="Trở lên đầu trang"><span class="glyphicon glyphicon-circle-arrow-up text-primary"></span></div>
+    <div id="back-to-top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
 </body>
 
 </html>
