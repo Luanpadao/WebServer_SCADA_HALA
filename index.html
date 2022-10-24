@@ -178,20 +178,46 @@
         </div>
         <div id="control">
             <div class="row">
-                <div class="col-md-8 border bg-primary"style="height: 800px;">
+                <div class="col-md-8 border bg-primary"style="height: 1000px;">
                     SACADA
                 </div>
                 <div class="col-md-4">
-                    <div class="row border bg-secondary" style="height: 500px;">infor
+                    <div class="row border bg-secondary" style="height: 600px;">infor
                     <p>Tên sản phẩm:</p>
                     <p>Mã sản phẩm:</p>
                     <p>Mã QR:</p>
                     <p>Khối lượng:</p>
                     </div>
-                    <div class="row border bg-light " id="panel_auto" style="height: 300px;">panel
-                        <button type="button" class="btn btn-success">run</button>
-                        <button type="button" class="btn btn-danger">stop</button>
-                        <button type="button" class="btn btn-danger">e-stop</button>
+                    <div class="row border bg-light " id="panel_control" style="height: 400px;">
+                        <p class="text-center" style="line-height:1;">PANEL</p>
+                        <p class="text-center">
+                            &nbsp;&nbsp; &nbsp;&nbsp; AUTO
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                            MANUAL
+                        </p>
+                        <p class="text-center">
+                            <button type="button" class="btn btn-secondary" title="run">NHẬP</button> 
+                            <button type="button" class="btn btn-secondary" title="stop">XUẤT</button>
+                        </p>
+                        <div class="auto_manual" id="auto">
+                            <p class="text-center">
+                                <button type="button" class="btn btn-secondary" title="run">RUN</button>
+                                <button type="button" class="btn btn-secondary" title="stop">STOP</button>
+                                <button type="button" class="btn btn-secondary" id="bt_e-stop" title="emergency stop">E-STOP</button>
+                            </p>
+                        </div>
+                        <div class="auto_manual" id="manual">
+                            <p class="text-center">
+                                <label for="pos">Position :</label>
+                                <input type="text" id="pos" name="pos" maxlength="4" size="4">
+                                <button type="button" class="btn btn-secondary" title="select">SELECT</button>
+                                <button type="button" class="btn btn-secondary" title="run">RUN</button>
+                                <button type="button" class="btn btn-secondary" id="bt_e-stop" title="emergency stop">E-STOP</button>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

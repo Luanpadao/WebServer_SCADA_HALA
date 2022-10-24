@@ -5,6 +5,7 @@ $(document).ready(function()
     $("#member").hide();
     $("#intructor").hide();
     $("#back-to-top").hide();
+    $("#auto").hide();
     
     // sự kiện click introduce
     $("#bt_introduce").click(function(){
