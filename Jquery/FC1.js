@@ -1,3 +1,5 @@
+var sw = false;
+var sw_1 = false;
 $(document).ready(function()
 {
     // ẩn của sổ control,member
@@ -5,7 +7,7 @@ $(document).ready(function()
     $("#member").hide();
     $("#intructor").hide();
     $("#back-to-top").hide();
-    $("#auto").hide();
+    $("#mode_auto").hide();
     
     // sự kiện click introduce
     $("#bt_introduce").click(function(){
@@ -123,20 +125,20 @@ $(document).ready(function()
         bt_member.classList.remove('active');
     });
     $(window).scroll(function(){
-        if($(this).scrollTop()>165){
+        if($(this).scrollTop()>145){
             $("#back-to-top").show();
-            $("nav").css("position", "fixed ");
-            $("nav").css("top", "0 ");
-            $("nav").css("z-index", "10");
-            $("nav").css("--bs-navbar-brand-padding-y", "0rem");
-            $("nav").css("width", "100%");
+            // $("nav").css("position", "fixed ");
+            // $("nav").css("top", "0 ");
+            // $("nav").css("z-index", "10");
+            // $("nav").css("--bs-navbar-brand-padding-y", "0rem");
+            // $("nav").css("width", "100%");
             // $("nav").css("opacity", "1");
         }
         else{
             $("#back-to-top").hide();
-            $(".navbar").css("position", "relative ");
-            $("nav").css("--bs-navbar-brand-padding-y", "0.3125rem");
-            $("nav").css("width", "100%");
+            // $(".navbar").css("position", "relative ");
+            // $("nav").css("--bs-navbar-brand-padding-y", "0.3125rem");
+            // $("nav").css("width", "100%");
         }
     });
     $(".dropdown-item").click(function(){
@@ -148,5 +150,39 @@ $(document).ready(function()
         $("body,html").animate({scrollTop:0},500);
         return false;
     });
-    
+    $("#bt_run").mousedown(function(){
+        setTag("tag_Bool",true);
+        IOField("pos","tag_Integer");
+    });
+    $("#bt_run").mouseup(function(){
+        setTag("tag_Bool",false);
+    });
+    $("#switch_mode").change(function(){
+        sw = !sw;
+        if (sw == true){
+            $("#mode_auto").show();
+            $("#mode_manual").hide();
+        }
+        else{
+            $("#mode_auto").hide();
+            $("#mode_manual").show();
+        }
+    })
 })
+
+
+// Hàm chức năng ghi giá trị vào tag
+function setTag(tag, val) {
+    var tag_Link = '"Web_comm".' + tag;
+    var url = "IO.html";
+    sdata = tag_Link + '=' + val;
+    $.post(url, sdata, function (result2) { });
+}
+
+// Hàm chức năng đọc giá trị tag
+function IOField(ObjectID, tag) {
+    url = "IO.html";
+    $.getJSON(url, function (result) {
+        document.getElementById(ObjectID).value = result[tag];
+    });
+}

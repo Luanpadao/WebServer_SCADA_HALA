@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="./CSS/styles.css">
-
     <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <!-- <script src="FB/justgage.1.0.1.min.js"></script>
+    <script src="FB/raphael.2.1.0.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="Jquery/FC1.js"></script>
 
     <title>HALA</title>
 </head>
 <body>
-    <header>
+    <header class="text-center">
         <a href="#"><img src="images/LOGO_IUH.PNG" title="Trường Đại học Công nghiệp Thành phố Hồ Chí Minh"
                 class="img-fluid m-0" alt=""></a>
         <div id="title" class="text-uppercase text-center fw-bold">Đề Tài: Thiết kế hệ thống lưu kho tự động và giám sát
@@ -176,31 +177,55 @@
                 aliquid deserunt blanditiis tempore impedit.</p>
 
         </div>
-        <div id="control">
-            <div class="row">
-                <div class="col-md-8 border bg-primary"style="height: 1000px;">
+        <div id="control" class="container">
+                <p id="mode">
+                    MANUAL
+                    <label class="switch">
+                        <input id="switch_mode" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    AUTO
+                </p>
+                <p id="mode_1">
+                    <button type="button" class="btn btn-secondary" id="bt_import" title="run">IMPORT</button> 
+                    <button type="button" class="btn btn-secondary" id="bt_export" title="stop">EXPORT</button>
+                </p>
+                <p id="mode_2">
+                    <button type="button" class="btn btn-secondary" id="bt_import" title="run">RESET</button> 
+                    <button type="button" class="btn btn-secondary" id="bt_export" title="stop">E-STOP</button>
+                </p>
+                <p id="mode_auto">
+                    <button type="button" class="btn btn-secondary" id="bt_import" title="run">START</button> 
+                    <button type="button" class="btn btn-secondary" id="bt_export" title="stop">STOP</button>
+                </p>
+                <p id="mode_manual">
+                    <button type="button" class="btn btn-secondary" id="bt_import" title="run">RUN</button> 
+                </p>
+        </div>
+            <!-- <img class="container" src="images/backGround_control.png"> -->
+            <!-- <div class="row">
+                <div class="col-md-8 border bg-primary"style="height: 750px;">
                     SACADA
                 </div>
                 <div class="col-md-4">
-                    <div class="row border bg-secondary" style="height: 600px;">infor
-                    <p>Tên sản phẩm:</p>
-                    <p>Mã sản phẩm:</p>
-                    <p>Mã QR:</p>
-                    <p>Khối lượng:</p>
+                    <div class="row border bg-secondary" style="height: 250px;">infor
+                        <p>Tên sản phẩm:</p>
+                        <p>Mã sản phẩm:</p>
+                        <p>Mã QR:</p>
                     </div>
-                    <div class="row border bg-light " id="panel_control" style="height: 400px;">
+                    <div class="row border bg-light " id="panel_control" style="height: 500px;">
                         <p class="text-center" style="line-height:1;">PANEL</p>
                         <p class="text-center">
-                            &nbsp;&nbsp; &nbsp;&nbsp; AUTO
+                            MANUAL
                             <label class="switch">
-                                <input type="checkbox">
+                                <input id="switch_mode" type="checkbox">
                                 <span class="slider round"></span>
                             </label>
-                            MANUAL
+                            AUTO
                         </p>
                         <p class="text-center">
-                            <button type="button" class="btn btn-secondary" title="run">NHẬP</button> 
-                            <button type="button" class="btn btn-secondary" title="stop">XUẤT</button>
+                            <button type="button" class="btn btn-secondary" id="bt_import" title="run">NHẬP</button> 
+                            <button type="button" class="btn btn-secondary" id="bt_export" title="stop">XUẤT</button>
                         </p>
                         <div class="auto_manual" id="auto">
                             <p class="text-center">
@@ -214,19 +239,24 @@
                                 <label for="pos">Position :</label>
                                 <input type="text" id="pos" name="pos" maxlength="4" size="4">
                                 <button type="button" class="btn btn-secondary" title="select">SELECT</button>
-                                <button type="button" class="btn btn-secondary" title="run">RUN</button>
+                                <button type="button" class="btn btn-secondary" id="bt_run" title="run">RUN</button>
                                 <button type="button" class="btn btn-secondary" id="bt_e-stop" title="emergency stop">E-STOP</button>
                             </p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
         <div id="intructor">
             <div class="card" style="width:400px">
                 <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image"
                     style="width:100%">
-                <h1>Th.s Hà Chí Kiên</h1>
+                    <div class="card-body">
+                        <h4 class="card-title">Th.S Hà Chí Kiên</h4>
+                        <p class="card-text">Some example text some example text. John Doe is an architect and
+                            engineer</p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
             </div>
         </div>
         <div id="member" class="m-0">
