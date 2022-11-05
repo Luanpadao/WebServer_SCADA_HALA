@@ -177,8 +177,99 @@
                 aliquid deserunt blanditiis tempore impedit.</p>
 
         </div>
+
         <div id="control" class="container">
-                <p id="mode">
+            <div class="row">
+                <div class="col-md-9">
+                    <img src="./images/backGround_display.png" width="100%">
+                </div>
+                <div class="col-md-3">
+                    <form>
+                        <div class="row text-center">
+                          <label class="bg-primary">POSITION</label>
+                        </div>
+                        <div class="row text-center">
+                            <label class="form-text">ROBOT ĐANG DI CHUYỂN</label>
+                          </div>
+                        <div class="row form-text-label">
+                            <div class="col-md-4">
+                                x-scale
+                            </div>
+                            <div class="col-md-4">
+                                y-scale
+                            </div>
+                            <div class="col-md-4">
+                                z-scale
+                            </div>
+                        </div>
+                        <div class="row form-text-label text-center">
+                            <div class="col-md-4 pos">
+                                <label>300</label>
+                            </div>
+                            <div class="col-md-4 pos">
+                                <label>10</label>
+                            </div>
+                            <div class="col-md-4 pos">
+                                <label>-200</label>
+                            </div>
+                        </div>
+                        <div class="row text-center mt-2">
+                            <label class="bg-primary">INFORMATION</label>
+                        </div>
+                        <div class="row form-text-label mt-1">
+                            <div class="col-md-3">
+                                <label>QRcode</label>
+                            </div>
+                            <div class="col-md-9" >
+                                <input type="text" size="12" disabled>
+                            </div>
+                        </div>
+                        <div class="row form-text-label mt-1">
+                            <div class="col-md-3">
+                                <label>Type</label>
+                            </div>
+                            <div class="col-md-9" >
+                                <input type="text" size="12" disabled>
+                            </div>
+                        </div>
+                        <div class="row form-text-label mt-1">
+                            <div class="col-md-3">
+                                <label>Name</label>
+                            </div>
+                            <div class="col-md-9" >
+                                <input type="text" size="12" disabled>
+                            </div>
+                        </div>
+                        <div class="row text-center mt-2">
+                            <label class="bg-primary">PANEL</label>
+                        </div>
+                        <div class="row text-center mt-1">
+                            MANUAL
+                            <label class="switch">
+                                <input id="switch_mode" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                            AUTO  
+                        </div>
+                        <div class="row text-center">
+                            <button type="button" class="btn btn-secondary" id="bt_import" title="button import">IMPORT</button> 
+                            <button type="button" class="btn btn-secondary" id="bt_export" title="button export">EXPORT</button>
+                        </div>
+                        <div class="row text-center">
+                            <button type="button" class="btn btn-secondary" id="bt_reset" title="button reset">RESET</button> 
+                            <button type="button" class="btn btn-secondary" id="bt_e-stop" title="button e-stop">E-STOP</button>
+                        </div>
+                        <div class="row text-center" id="mode_manual">
+                            <button type="button" class="btn btn-secondary" id="bt_run" title="button run">RUN</button> 
+                        </div>
+                        <div class="row text-center" id="mode_auto">
+                            <button type="button" class="btn btn-secondary" id="bt_start" title="button start">START</button> 
+                            <button type="button" class="btn btn-secondary" id="bt_stop" title="button stop">STOP</button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+                <!-- <p id="mode">
                     MANUAL
                     <label class="switch">
                         <input id="switch_mode" type="checkbox">
@@ -200,53 +291,8 @@
                 </p>
                 <p id="mode_manual">
                     <button type="button" class="btn btn-secondary" id="bt_import" title="run">RUN</button> 
-                </p>
+                </p> -->
         </div>
-            <!-- <img class="container" src="images/backGround_control.png"> -->
-            <!-- <div class="row">
-                <div class="col-md-8 border bg-primary"style="height: 750px;">
-                    SACADA
-                </div>
-                <div class="col-md-4">
-                    <div class="row border bg-secondary" style="height: 250px;">infor
-                        <p>Tên sản phẩm:</p>
-                        <p>Mã sản phẩm:</p>
-                        <p>Mã QR:</p>
-                    </div>
-                    <div class="row border bg-light " id="panel_control" style="height: 500px;">
-                        <p class="text-center" style="line-height:1;">PANEL</p>
-                        <p class="text-center">
-                            MANUAL
-                            <label class="switch">
-                                <input id="switch_mode" type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            AUTO
-                        </p>
-                        <p class="text-center">
-                            <button type="button" class="btn btn-secondary" id="bt_import" title="run">NHẬP</button> 
-                            <button type="button" class="btn btn-secondary" id="bt_export" title="stop">XUẤT</button>
-                        </p>
-                        <div class="auto_manual" id="auto">
-                            <p class="text-center">
-                                <button type="button" class="btn btn-secondary" title="run">RUN</button>
-                                <button type="button" class="btn btn-secondary" title="stop">STOP</button>
-                                <button type="button" class="btn btn-secondary" id="bt_e-stop" title="emergency stop">E-STOP</button>
-                            </p>
-                        </div>
-                        <div class="auto_manual" id="manual">
-                            <p class="text-center">
-                                <label for="pos">Position :</label>
-                                <input type="text" id="pos" name="pos" maxlength="4" size="4">
-                                <button type="button" class="btn btn-secondary" title="select">SELECT</button>
-                                <button type="button" class="btn btn-secondary" id="bt_run" title="run">RUN</button>
-                                <button type="button" class="btn btn-secondary" id="bt_e-stop" title="emergency stop">E-STOP</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        <!-- </div> -->
         <div id="intructor">
             <div class="card" style="width:400px">
                 <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image"

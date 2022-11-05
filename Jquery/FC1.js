@@ -18,6 +18,7 @@ $(document).ready(function()
         $("#member").hide();
         $("#intructor").hide();
         $("#banner").show();
+        $("#content").css("background-color", "#fff");
         bt_introduce.classList.add('active');
         bt_control.classList.remove('active');
         bt_member.classList.remove('active');
@@ -31,6 +32,7 @@ $(document).ready(function()
         $("#member").hide();
         $("#intructor").hide();
         $("#banner").show();
+        $("#content").css("background-color", "#fff");
         bt_introduce.classList.add('active');
         bt_control.classList.remove('active');
         bt_member.classList.remove('active');
@@ -44,6 +46,7 @@ $(document).ready(function()
         $("#member").hide();
         $("#intructor").hide();
         $("#banner").show();
+        $("#content").css("background-color", "#fff");
         bt_introduce.classList.add('active');
         bt_control.classList.remove('active');
         bt_member.classList.remove('active');
@@ -56,6 +59,7 @@ $(document).ready(function()
         $("#control").show();
         $("#member").hide();
         $("#intructor").hide();
+        $("#content").css("background-color", "#a3ebeb");
         bt_control.classList.add('active');
         bt_introduce.classList.remove('active');
         bt_member.classList.remove('active');
@@ -68,6 +72,7 @@ $(document).ready(function()
         $("#control").hide();
         $("#member").show();
         $("#intructor").hide();
+        $("#content").css("background-color", "#fff");
         bt_member.classList.add('active');
         bt_control.classList.remove('active');
         bt_introduce.classList.remove('active');
@@ -79,6 +84,7 @@ $(document).ready(function()
         $("#control").hide();
         $("#member").show();
         $("#intructor").hide();
+        $("#content").css("background-color", "#fff");
         bt_member.classList.add('active');
         bt_control.classList.remove('active');
         bt_introduce.classList.remove('active');
@@ -89,6 +95,7 @@ $(document).ready(function()
         $("#control").hide();
         $("#member").show();
         $("#intructor").hide();
+        $("#content").css("background-color", "#fff");
         bt_member.classList.add('active');
         bt_control.classList.remove('active');
         bt_introduce.classList.remove('active');
@@ -99,6 +106,7 @@ $(document).ready(function()
         $("#control").hide();
         $("#member").show();
         $("#intructor").hide();
+        $("#content").css("background-color", "#fff");
         bt_member.classList.add('active');
         bt_control.classList.remove('active');
         bt_introduce.classList.remove('active');
@@ -109,6 +117,7 @@ $(document).ready(function()
         $("#control").hide();
         $("#member").show();
         $("#intructor").hide();
+        $("#content").css("background-color", "#fff");
         bt_member.classList.add('active');
         bt_control.classList.remove('active');
         bt_introduce.classList.remove('active');
@@ -119,6 +128,7 @@ $(document).ready(function()
         $("#control").hide();
         $("#member").hide();
         $("#intructor").show();
+        $("#content").css("background-color", "#fff");
         bt_intructor.classList.add('active');
         bt_control.classList.remove('active');
         bt_introduce.classList.remove('active');
