@@ -183,7 +183,7 @@
                 <div class="col-md-9">
                     <img src="./images/backGround_display.png" width="100%">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3" id="group_panel">
                     <form>
                         <div class="row text-center">
                           <label class="bg-primary">POSITION</label>
@@ -191,7 +191,7 @@
                         <div class="row text-center">
                             <label class="form-text">ROBOT ĐANG DI CHUYỂN</label>
                           </div>
-                        <div class="row form-text-label">
+                        <div class="row form-text-label text-center">
                             <div class="col-md-4">
                                 x-scale
                             </div>
@@ -216,7 +216,7 @@
                         <div class="row text-center mt-2">
                             <label class="bg-primary">INFORMATION</label>
                         </div>
-                        <div class="row form-text-label mt-1">
+                        <div class="row form-text-label mt-1 text-center">
                             <div class="col-md-3">
                                 <label>QRcode</label>
                             </div>
@@ -224,7 +224,7 @@
                                 <input type="text" size="12" disabled>
                             </div>
                         </div>
-                        <div class="row form-text-label mt-1">
+                        <div class="row form-text-label mt-1 text-center">
                             <div class="col-md-3">
                                 <label>Type</label>
                             </div>
@@ -232,7 +232,7 @@
                                 <input type="text" size="12" disabled>
                             </div>
                         </div>
-                        <div class="row form-text-label mt-1">
+                        <div class="row form-text-label mt-1 text-center">
                             <div class="col-md-3">
                                 <label>Name</label>
                             </div>
@@ -243,28 +243,32 @@
                         <div class="row text-center mt-2">
                             <label class="bg-primary">PANEL</label>
                         </div>
-                        <div class="row text-center mt-1">
-                            MANUAL
-                            <label class="switch">
-                                <input id="switch_mode" type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            AUTO  
-                        </div>
-                        <div class="row text-center">
-                            <button type="button" class="btn btn-secondary" id="bt_import" title="button import">IMPORT</button> 
-                            <button type="button" class="btn btn-secondary" id="bt_export" title="button export">EXPORT</button>
-                        </div>
-                        <div class="row text-center">
-                            <button type="button" class="btn btn-secondary" id="bt_reset" title="button reset">RESET</button> 
-                            <button type="button" class="btn btn-secondary" id="bt_e-stop" title="button e-stop">E-STOP</button>
-                        </div>
-                        <div class="row text-center" id="mode_manual">
-                            <button type="button" class="btn btn-secondary" id="bt_run" title="button run">RUN</button> 
-                        </div>
-                        <div class="row text-center" id="mode_auto">
-                            <button type="button" class="btn btn-secondary" id="bt_start" title="button start">START</button> 
-                            <button type="button" class="btn btn-secondary" id="bt_stop" title="button stop">STOP</button>
+                        <div id="gd_dk">
+                            <div class="row led" id="power">
+                            </div>
+                            <div class="row text-center mt-1 text-center">
+                                MANUAL
+                                <label class="switch">
+                                    <input id="switch_mode" type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                AUTO  
+                            </div>
+                            <div class="row text-center">
+                                <button type="button" class="btn btn-secondary" id="bt_import" title="button import">IMPORT</button> 
+                                <button type="button" class="btn btn-secondary" id="bt_export" title="button export">EXPORT</button>
+                            </div>
+                            <div class="row text-center">
+                                <button type="button" class="btn btn-secondary" id="bt_reset" title="button reset">RESET</button> 
+                                <button type="button" class="btn btn-secondary" id="bt_e-stop" title="button e-stop">E-STOP</button>
+                            </div>
+                            <div class="row text-center" id="mode_manual">
+                                <button type="button" class="btn btn-secondary" id="bt_run" title="button run">RUN</button> 
+                            </div>
+                            <div class="row text-center" id="mode_auto">
+                                <button type="button" class="btn btn-secondary" id="bt_start" title="button start">START</button> 
+                                <button type="button" class="btn btn-secondary" id="bt_stop" title="button stop">STOP</button>
+                            </div>
                         </div>
                       </form>
                 </div>
