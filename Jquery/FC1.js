@@ -7,7 +7,10 @@ $(document).ready(function()
     $("#member").hide();
     $("#intructor").hide();
     $("#back-to-top").hide();
-    $("#mode_auto").hide();
+    $("#mode_m").show();
+    $("#mode_a").hide();
+    $("#mode_sa").hide();
+    mode.placeholder = "MANUAL";
     $("#bt_import").css("background-color", "blue");
     
     ///////////////////////////----------------------------------BUTTON INTRODUCE----------------------///////////////////////////////
@@ -167,17 +170,43 @@ $(document).ready(function()
     // $("#bt_run").mouseup(function(){
     //     setTag("tag_Bool",false);
     // });
-///////////////////////////----------------------------------SW AUTO/MANUAL----------------------///////////////////////////////
-    $("#switch_mode").change(function(){
-        sw = !sw;
-        if (sw == true){
-            $("#mode_auto").show();
-            $("#mode_manual").hide();
+///////////////////////////----------------------------------SW SEMI-AUTO/AUTO----------------------///////////////////////////////
+    // $("#switch_mode").change(function(){
+    //     sw = !sw;
+    //     if (sw == true){
+    //         $("#mode_a").show();
+    //         $("#mode_sa").hide();
+    //         mode.placeholder = "AUTO";
+    //         setTag("sw_auto_manual",true);
+    //     }
+    //     else{
+    //         $("#mode_a").hide();
+    //         $("#mode_sa").show();
+    //         mode.placeholder = "SEMI-AUTO";
+    //         setTag("sw_auto_manual",false);
+    //     }
+    // })
+    $("input[name='mode']").click(function(){
+        var sw = $(this).val();
+        if (sw == 1){
+            $("#mode_m").show();
+            $("#mode_a").hide();
+            $("#mode_sa").hide();
+            mode.placeholder = "MANUAL";
             setTag("sw_auto_manual",true);
         }
-        else{
-            $("#mode_auto").hide();
-            $("#mode_manual").show();
+        else if(sw==2){
+            $("#mode_m").hide();
+            $("#mode_sa").show();
+            $("#mode_a").hide();
+            mode.placeholder = "SEMI-AUTO";
+            setTag("sw_auto_manual",false);
+        }
+        else if(sw==3){
+            $("#mode_m").hide();
+            $("#mode_sa").hide();
+            $("#mode_a").show();
+            mode.placeholder = "AUTO";
             setTag("sw_auto_manual",false);
         }
     })
@@ -216,7 +245,7 @@ $(document).ready(function()
         $("#bt_stop").css("background-color", "#6c757d");
         setTag("bt_stop",false);
     })
-///////////////////////////----------------------------------NÚT STOP----------------------///////////////////////////////
+///////////////////////////----------------------------------NÚT E-STOP----------------------///////////////////////////////
     $("#bt_e-stop").mousedown(function()
     {
         $("#bt_e-stop").css("background-color", "red");

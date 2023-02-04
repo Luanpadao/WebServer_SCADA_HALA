@@ -186,13 +186,14 @@
                 </div>
                 <div class="col-md-5" id="group_panel">
                     <form>
+                        <!-------------------------------------------- POSITION ------------------------------------------------->
                         <div class="row text-center">
                           <label class="bg-primary">POSITION</label>
                         </div>
                         <div class="row text-center">
                             <label class="form-text">ROBOT ĐANG DI CHUYỂN</label>
                         </div>
-                        <div class="row form-text-label text-center">
+                        <div class="row form-text-label text-center" id="position">
                             <div class="col-md-4">
                                 x-scale
                             </div>
@@ -203,7 +204,7 @@
                                 z-scale
                             </div>
                         </div>
-                        <div class="row form-text-label text-center">
+                        <div class="row form-text-label text-center" id="lb_position">
                             <div class="col-md-4 pos">
                                 <label>300</label>
                             </div>
@@ -214,6 +215,7 @@
                                 <label>-200</label>
                             </div>
                         </div>
+                        <!-------------------------------------------- INFORMATION ------------------------------------------------->
                         <div class="row text-center mt-2">
                             <label class="bg-primary">INFORMATION</label>
                         </div>
@@ -241,36 +243,80 @@
                                 <input type="text" size="12" disabled>
                             </div>
                         </div>
+                        
+                        <!-------------------------------------------- SETUP ------------------------------------------------->
+                        <div class="row text-center mt-2">
+                            <label class="bg-primary">SETUP</label>
+                        </div>
+
+                        <!-------------------------------------------- PANEL ------------------------------------------------->
                         <div class="row text-center mt-2">
                             <label class="bg-primary">PANEL</label>
                         </div>
+                        <!---------------- Nút SWITCH chọn chế độ ------------------>
                         <div id="gd_dk">
                             <div class="row led" id="power">
                             </div>
-                            <div class="d-block btn-group mx-auto">
+                            <div class="d-block btn-group mx-auto" id="switch_mode">
                                 <div class="text-center">
-                                    SEMI-AUTO
-                                    <label class="switch">
-                                        <input id="switch_mode" type="checkbox">
-                                        <span class="slider round"></span>
-                                    </label>
-                                    AUTO &emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="radio" id="mode1" name="mode" value= 1 checked>
+                                  <label for="mode1">M</label>
+                                  <input type="radio" id="mode2" name="mode" value= 2>
+                                  <label for="mode2">S-A</label>
+                                  <input type="radio" id="mode3" name="mode" value= 3>
+                                  <label for="mode3">A</label>
                                 </div>
                             </div>
-                            <div class="mx-auto btn_group text-center">
-                                <button type="button" class="btn btn-secondary" id="bt_import" title="button import">IMPORT</button> 
-                                <button type="button" class="btn btn-secondary" id="bt_export" title="button export">EXPORT</button>
+                            <div class="text-center" >
+                                <input class="text-center" id="mode" type="text" size="12" disabled placeholder="SEMI-AUTO">
                             </div>
-                            <div class="mx-auto btn_group text-center" id="mode_manual">
-                                <button type="button" class="btn btn-secondary" id="bt_run" title="button run">RUN</button> 
+                            <!---------------- Chế độ MANUAL ------------------>
+                            <div class="mx-auto  btn_group text-center" id="mode_m">
+                                <div class="mx-auto btn_group text-center">
+                                    <label>Trục x:</label>
+                                    <button type="button" class="btn btn-secondary" id="bt_x+" title="button import">X+</button> 
+                                    <button type="button" class="btn btn-secondary" id="bt_x-" title="button export">X-</button>
+                                </div>
+                                <div class="mx-auto btn_group text-center">
+                                    <label>Trục y:</label>
+                                    <button type="button" class="btn btn-secondary" id="bt_y+" title="button import">Y+</button> 
+                                    <button type="button" class="btn btn-secondary" id="bt_y-" title="button export">Y-</button>
+                                </div>
+                                <div class="mx-auto btn_group text-center">
+                                    <label>Trục z:</label>
+                                    <button type="button" class="btn btn-secondary" id="bt_z+" title="button import">Z+</button> 
+                                    <button type="button" class="btn btn-secondary" id="bt_z-" title="button export">Z-</button>
+                                </div>
+                                <div class="mx-auto btn_group text-center">
+                                    <label>Setting:</label>
+                                    <button type="button" class="btn btn-secondary" id="bt_sh" title="button export">SET HOME</button>
+                                    <button type="button" class="btn btn-secondary" id="bt_home" title="button export">HOME</button>
+                                </div>
                             </div>
-                            <div class="mx-auto  btn_group text-center" id="mode_auto">
+                            <!---------------- chế độ SEMI-AUTO ------------------>
+                            <div class="mx-auto btn_group text-center" id="mode_sa">
+                                <div class="mx-auto btn_group text-center">
+                                    <button type="button" class="btn btn-secondary" id="bt_import" title="button import">IMPORT</button> 
+                                    <button type="button" class="btn btn-secondary" id="bt_export" title="button export">EXPORT</button>
+                                </div>
+                                <button type="button" class="btn btn-secondary" id="bt_run" title="button run">RUN</button>
+                                <div class="mx-auto  btn_group text-center">
+                                    <button type="button" class="btn btn-secondary" id="bt_reset" title="button reset">RESET</button> 
+                                    <button type="button" class="btn btn-secondary" id="bt_e-stop" title="button e-stop">E-STOP</button>
+                                </div>
+                            </div>
+                            <!------------------ chế độ AUTO -------------------->
+                            <div class="mx-auto  btn_group text-center" id="mode_a">
+                                <div class="mx-auto btn_group text-center">
+                                    <button type="button" class="btn btn-secondary" id="bt_import" title="button import">IMPORT</button> 
+                                    <button type="button" class="btn btn-secondary" id="bt_export" title="button export">EXPORT</button>
+                                </div>
                                 <button type="button" class="btn btn-secondary" id="bt_start" title="button start">START</button> 
                                 <button type="button" class="btn btn-secondary" id="bt_stop" title="button stop">STOP</button>
-                            </div>
-                            <div class="mx-auto  btn_group text-center">
-                                <button type="button" class="btn btn-secondary" id="bt_reset" title="button reset">RESET</button> 
-                                <button type="button" class="btn btn-secondary" id="bt_e-stop" title="button e-stop">E-STOP</button>
+                                <div class="mx-auto  btn_group text-center">
+                                    <button type="button" class="btn btn-secondary" id="bt_reset" title="button reset">RESET</button> 
+                                    <button type="button" class="btn btn-secondary" id="bt_e-stop" title="button e-stop">E-STOP</button>
+                                </div>
                             </div>
                         </div>
                       </form>
