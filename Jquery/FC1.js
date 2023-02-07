@@ -11,7 +11,7 @@ $(document).ready(function()
     $("#mode_a").hide();
     $("#mode_sa").hide();
     mode.placeholder = "MANUAL";
-    $("#bt_import").css("background-color", "blue");
+    $(".bt_import").css("background-color", "blue");
     
     ///////////////////////////----------------------------------BUTTON INTRODUCE----------------------///////////////////////////////
     $("#bt_introduce").click(function(){
@@ -211,75 +211,243 @@ $(document).ready(function()
         }
     })
 ///////////////////////////----------------------------------SW IMPORT/EXPORT----------------------///////////////////////////////
-    $("#bt_import").click(function()
+    $(".bt_import").click(function()
     {
-        $("#bt_import").css("background-color", "blue");
-        $("#bt_export").css("background-color", "#6c757d");
+        $(".bt_import").css("background-color", "blue");
+        $(".bt_export").css("background-color", "#6c757d");
         setTag("sw_im_ex",false);
     })
-    $("#bt_export").click(function()
+    $(".bt_export").click(function()
     {
-        $("#bt_import").css("background-color", "#6c757d");
-        $("#bt_export").css("background-color", "blue");
+        $(".bt_import").css("background-color", "#6c757d");
+        $(".bt_export").css("background-color", "blue");
         setTag("sw_im_ex",true);
     })
 ///////////////////////////----------------------------------NÚT START----------------------///////////////////////////////
-    $("#bt_start").mousedown(function()
+    $(".bt_start").mousedown(function()
     {
-        $("#bt_start").css("background-color", "green");
+        $(this).css("background-color", "green");
         setTag("bt_start",true);
     })
-    $("#bt_start").mouseup(function()
+    $(".bt_start").mouseup(function()
     {
-        $("#bt_start").css("background-color", "#6c757d");
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_start",false);
+    })
+    $(".bt_start").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
         setTag("bt_start",false);
     })
 ///////////////////////////----------------------------------NÚT STOP----------------------///////////////////////////////
-    $("#bt_stop").mousedown(function()
+    $(".bt_stop").mousedown(function()
     {
-        $("#bt_stop").css("background-color", "red");
+        $(this).css("background-color", "red");
         setTag("bt_stop",true);
     })
-    $("#bt_stop").mouseup(function()
+    $(".bt_stop").mouseup(function()
     {
-        $("#bt_stop").css("background-color", "#6c757d");
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_stop",false);
+    })
+    $(".bt_stop").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
         setTag("bt_stop",false);
     })
 ///////////////////////////----------------------------------NÚT E-STOP----------------------///////////////////////////////
-    $("#bt_e-stop").mousedown(function()
+    $(".bt_e-stop").mousedown(function()
     {
-        $("#bt_e-stop").css("background-color", "red");
+        $(this).css("background-color", "red");
         setTag("bt_e-stop",true);
     })
-    $("#bt_e-stop").mouseup(function()
+    $(".bt_e-stop").mouseup(function()
     {
-        $("#bt_e-stop").css("background-color", "#6c757d");
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_e-stop",false);
+    })
+    $(".bt_e-stop").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
         setTag("bt_e-stop",false);
     })
 ///////////////////////////----------------------------------NÚT RESET----------------------///////////////////////////////
-    $("#bt_reset").mousedown(function()
+    $(".bt_reset").mousedown(function()
     {
-        $("#bt_reset").css("background-color", "yellow");
+        $(this).css("background-color", "yellow");
         setTag("bt_reset",true);
     })
-    $("#bt_reset").mouseup(function()
+    $(".bt_reset").mouseup(function()
     {
-        $("#bt_reset").css("background-color", "#6c757d");
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_reset",false);
+    })
+    $(".bt_reset").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
         setTag("bt_reset",false);
     })
 ///////////////////////////----------------------------------NÚT RUN----------------------///////////////////////////////
-    $("#bt_run").mousedown(function()
+    $(".bt_run").mousedown(function()
     {
-        $("#bt_run").css("background-color", "green");
+        $(this).css("background-color", "green");
         setTag("bt_run",true);
     })
-    $("#bt_run").mouseup(function()
+    $(".bt_run").mouseup(function()
     {
-        $("#bt_run").css("background-color", "#6c757d");
+        $(this).css("background-color", "#6c757d");
         setTag("bt_run",false);
     })
+    $(".bt_run").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_run",false);
+    })
+///////////////////////////---------------------------------- NÚT X+ ----------------------///////////////////////////////
+    $(".buttonx").mousedown(function()
+    {
+        $(this).css("background-color", "green");
+        setTag("bt_x+", true);
+    });
+    $(".buttonx").mouseup(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_x+", false);
+    });
+    $(".buttonx").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_x+", false);
+    });
+///////////////////////////---------------------------------- NÚT X- ----------------------///////////////////////////////
+    $(".bt_x-").mousedown(function()
+    {
+        $(this).css("background-color", "green");
+        setTag("bt_x-", true);
+    });
+    $(".bt_x-").mouseup(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_x-", false);
+    });
+    $(".bt_x-").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_x-", false);
+    });
+///////////////////////////---------------------------------- NÚT Y+ ----------------------///////////////////////////////
+    $(".buttony").mousedown(function()
+    {
+        $(this).css("background-color", "green");
+        setTag("bt_y+",true);
+    })
+    $(".buttony").mouseup(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_y+",false);
+    })
+    $(".buttony").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_y+",false);
+    })
+///////////////////////////---------------------------------- NÚT Y- ----------------------///////////////////////////////
+    $(".bt_y-").mousedown(function()
+    {
+        $(this).css("background-color", "green");
+        setTag("bt_y-",true);
+    })
+    $(".bt_y-").mouseup(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_y-",false);
+    })
+    $(".bt_y-").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_y-",false);
+    })
+///////////////////////////---------------------------------- NÚT Z+ ----------------------///////////////////////////////
+    $(".buttonz").mousedown(function()
+    {
+        $(this).css("background-color", "green");
+        setTag("bt_z+",true);
+    })
+    $(".buttonz").mouseup(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_z+",false);
+    })
+    $(".buttonz").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_z+",false);
+    })
+///////////////////////////---------------------------------- NÚT Z- ----------------------///////////////////////////////
+    $(".bt_z-").mousedown(function()
+    {
+        $(this).css("background-color", "green");
+        setTag("bt_z-",true);
+    })
+    $(".bt_z-").mouseup(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_z-",false);
+    })
+    $(".bt_z-").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_z-",false);
+    })
+///////////////////////////---------------------------------- NÚT SET HOME ----------------------///////////////////////////////
+    $(".bt_sh").mousedown(function()
+    {
+        $(this).css("background-color", "green");
+        setTag("bt_sh",true);
+    })
+    $(".bt_sh").mouseup(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_sh",false);
+    })
+    $(".bt_sh").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_sh",false);
+    })
+///////////////////////////---------------------------------- NÚT SET HOME ----------------------///////////////////////////////
+    $(".bt_home").mousedown(function()
+    {
+        $(this).css("background-color", "green");
+        setTag("bt_home",true);
+    })
+    $(".bt_home").mouseup(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_home",false);
+    })
+    $(".bt_home").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_home",false);
+    })
+///////////////////////////---------------------------------- NÚT SET HOME ----------------------///////////////////////////////
+    $(".bt_hd").mousedown(function()
+    {
+        $(this).css("background-color", "green");
+        setTag("bt_hd",true);
+    })
+    $(".bt_hd").mouseup(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_hd",false);
+    })
+    $(".bt_hd").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_hd",false);
+    })
 })
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //----------------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------//
