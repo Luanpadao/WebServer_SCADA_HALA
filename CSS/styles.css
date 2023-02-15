@@ -65,12 +65,146 @@ ul li:hover .dropdown-menu{
     bottom: 120px;
     right: 20px;
 }
-/* #intructor{
-    margin: 0 auto;
-} */
+
 .active{
     color:aqua !important;
 }
+
+/* css đối tượng thay đổi */
+.rounded-circle{
+    width: 40px;
+    height: 40px;
+}
+.object #n1{
+    position:absolute;
+    top: 480px;
+    left: 188px;
+}
+.object #n2{
+    position:absolute;
+    top: 480px;
+    left: 254px;
+}
+.object #n3{
+    position:absolute;
+    top: 480px;
+    left: 321px;
+}
+.object #n4{
+    position:absolute;
+    top: 413px;
+    left: 188px;
+}
+.object #n5{
+    position:absolute;
+    top: 413px;
+    left: 254px;
+}
+.object #n6{
+    position:absolute;
+    top: 413px;
+    left: 321px;
+}
+.object #n7{
+    position:absolute;
+    top: 345px;
+    left: 188px;
+}
+.object #n8{
+    position:absolute;
+    top: 345px;
+    left: 254px;
+}
+.object #n9{
+    position:absolute;
+    top: 345px;
+    left: 321px;
+}
+.object #n10{
+    position:absolute;
+    top: 480px;
+    left: 754px;
+}
+.object #n11{
+    position:absolute;
+    top: 480px;
+    left: 687px;
+}
+.object #n12{
+    position:absolute;
+    top: 480px;
+    left: 621px;
+}
+.object #n13{
+    position:absolute;
+    top: 413px;
+    left: 754px;
+}
+.object #n14{
+    position:absolute;
+    top: 413px;
+    left: 687px;
+}
+.object #n15{
+    position:absolute;
+    top: 413px;
+    left: 621px;
+}
+.object #n16{
+    position:absolute;
+    top: 345px;
+    left: 754px;
+}
+.object #n17{
+    position:absolute;
+    top: 345px;
+    left: 687px;
+}
+.object #n18{
+    position:absolute;
+    top: 345px;
+    left: 621px;
+}
+.object img{
+    position: absolute;
+}
+.object #ss_i1{
+    position: absolute;
+    top: 715px;
+    left: 167px;
+}
+.object #ss_i2{
+    position: absolute;
+    top: 715px;
+    left: 375px;
+}
+.object #ss_o{
+    position: absolute;
+    top: 715px;
+    left: 583px;
+}
+.object #dc_i{
+    position: absolute;
+    top: 715px;
+    left: 240px;
+}
+.object #dc_o{
+    position: absolute;
+    top: 715px;
+    left: 660px;
+}
+.object #mt_i{
+    position: absolute;
+    top: 650px;
+    left: 260px;
+}
+.object #mt_o{
+    position: absolute;
+    top: 650px;
+    left: 680px;
+}
+/* kết thúc phần css đối tượng thay đổi */
+
 footer{
     color: #fff;
     opacity: 0.8;
@@ -262,3 +396,4 @@ border-radius: 50%;
     background-size: cover;
 } */
 /*---------------------- hết giao diện phần control -----------------------------*/
+
