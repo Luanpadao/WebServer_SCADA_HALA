@@ -140,24 +140,13 @@ $(document).ready(function()
     $(window).scroll(function(){
         if($(this).scrollTop()>145){
             $("#back-to-top").show();
-            // $("nav").css("position", "fixed ");
-            // $("nav").css("top", "0 ");
-            // $("nav").css("z-index", "10");
-            // $("nav").css("--bs-navbar-brand-padding-y", "0rem");
-            // $("nav").css("width", "100%");
-            // $("nav").css("opacity", "1");
         }
         else{
             $("#back-to-top").hide();
-            // $(".navbar").css("position", "relative ");
-            // $("nav").css("--bs-navbar-brand-padding-y", "0.3125rem");
-            // $("nav").css("width", "100%");
         }
     });
     $(".dropdown-item").click(function(){
         navbarResponsive.classList.remove('show');
-        // item.classList.remove('show');
-        // $(".dropdown-menu").hide();
     });
     $("#back-to-top").click(function(){
         $("body,html").animate({scrollTop:0},500);
@@ -464,11 +453,15 @@ function setTag(tag, val) {
 
 // Hàm chức năng đọc giá trị tag
 function IOField(ObjectID, tag) {
-    url = "IO.html";
+    var url = "IO.html";
     $.getJSON(url, function (result) {
-        document.getElementById(ObjectID).innerHTML = result[tag];
+        const currentTime = getTime();
+        console.log(currentTime);
+        document.getElementById(ObjectID).value = result[tag];
+        document.getElementById("test1").value = currentTime;
     });
 }
+
 
 // Hàm chức năng hiển thị trạng thái symbol
 function fn_SymbolStatus(ObjectID, SymName, Tag)
@@ -488,8 +481,18 @@ function fn_SymbolStatus(ObjectID, SymName, Tag)
     });
 }
 
-// HIỂN THỊ DỮ LIỆU LÊN IO FIELD
+//LẪY DỮ LIỆU THỜI GIAN THỰC
+function getTime() {
+    const currentDate = new Date();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    const seconds = currentDate.getSeconds();
+    const formattedTime = `${hours}:${minutes}:${seconds}`;
+    return formattedTime;
+}
+
+// HIỂN THỊ DỮ LIỆU LÊN WEB cứ mỗi 1s
 setInterval(function(){
-    IOField('test', 'ss_i1');
-    fn_SymbolStatus('ss_i1','sstc','ss_i1');
+    IOField("test", "ss_i1");
+    // fn_SymbolStatus("ss_i1","sstc","ss_i1");
 },1000);
