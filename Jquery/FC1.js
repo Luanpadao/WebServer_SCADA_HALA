@@ -448,7 +448,7 @@ function setTag(tag, val) {
     var tag_Link = '"Web_comm".' + tag;
     var url = "IO.html";
     sdata = tag_Link + '=' + val;
-    $.post(url, sdata, function (result2) { });
+    $.post(url, sdata, function (result) { });
 }
 
 // Hàm chức năng đọc giá trị tag
@@ -457,6 +457,7 @@ function IOField(ObjectID, tag) {
     $.getJSON(url, function (result) {
         const currentTime = getTime();
         console.log(currentTime);
+        console.log(result);
         document.getElementById(ObjectID).value = result[tag];
         document.getElementById("test1").value = currentTime;
     });
@@ -468,8 +469,8 @@ function fn_SymbolStatus(ObjectID, SymName, Tag)
 {
     var imglink_0 = "/images/Symbol/" + SymName + "_1.png"; // Trạng thái tag = 0
     var imglink_1 = "/images/Symbol/" + SymName + "_2.png"; // Trạng thái tag = 1
-    url = "IO.html";
-    $.getJSON(url,function(result){
+    var url = "IO.html";
+    $.getJSON(url, function(result){
         if (result[Tag] == 0)
         {
             document.getElementById(ObjectID).src = imglink_0;
@@ -477,6 +478,10 @@ function fn_SymbolStatus(ObjectID, SymName, Tag)
         else if (result[Tag] == 1)
         {
             document.getElementById(ObjectID).src = imglink_1;
+        }
+        else
+        {
+            document.getElementById(ObjectID).src = imglink_0;
         }
     });
 }
@@ -494,5 +499,6 @@ function getTime() {
 // HIỂN THỊ DỮ LIỆU LÊN WEB cứ mỗi 1s
 setInterval(function(){
     IOField("test", "ss_i1");
-    // fn_SymbolStatus("ss_i1","sstc","ss_i1");
+    fn_SymbolStatus("ss_i1","sstc","ss_i1");
+    document.getElementById("ss_i1").src = "/images/Symbol/sstc_1.png";
 },1000);
