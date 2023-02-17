@@ -466,6 +466,31 @@ function setTag(tag, val) {
 function IOField(ObjectID, tag) {
     url = "IO.html";
     $.getJSON(url, function (result) {
-        document.getElementById(ObjectID).value = result[tag];
+        document.getElementById(ObjectID).innerHTML = result[tag];
     });
 }
+
+// Hàm chức năng hiển thị trạng thái symbol
+function fn_SymbolStatus(ObjectID, SymName, Tag)
+{
+    var imglink_0 = "/images/Symbol/" + SymName + "_1.png"; // Trạng thái tag = 0
+    var imglink_1 = "/images/Symbol/" + SymName + "_2.png"; // Trạng thái tag = 1
+    url = "IO.html";
+    $.getJSON(url,function(result){
+        if (result[Tag] == 0)
+        {
+            document.getElementById(ObjectID).src = imglink_0;
+        }
+        else if (result[Tag] == 1)
+        {
+            document.getElementById(ObjectID).src = imglink_1;
+        }
+    });
+}
+
+// HIỂN THỊ DỮ LIỆU LÊN IO FIELD
+setInterval(function()
+{
+    IOField('test', 'ss_i1');
+    fn_SymbolStatus('ss_i1','sstc','ss_i1');
+},1000);
