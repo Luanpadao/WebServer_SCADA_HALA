@@ -489,8 +489,7 @@ function fn_SymbolStatus(ObjectID, SymName, Tag)
 }
 
 // HIỂN THỊ DỮ LIỆU LÊN IO FIELD
-setInterval(function()
-{
+setInterval(function(){
     IOField('test', 'ss_i1');
     fn_SymbolStatus('ss_i1','sstc','ss_i1');
 },1000);
