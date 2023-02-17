@@ -467,8 +467,8 @@ function IOField(ObjectID, tag) {
 // Hàm chức năng hiển thị trạng thái symbol
 function fn_SymbolStatus(ObjectID, SymName, Tag)
 {
-    var imglink_0 = "/images/Symbol/" + SymName + "_1.png"; // Trạng thái tag = 0
-    var imglink_1 = "/images/Symbol/" + SymName + "_2.png"; // Trạng thái tag = 1
+    var imglink_0 = "../images/Symbol/"+SymName+ "_1.png"; // Trạng thái tag = 0
+    var imglink_1 = "../images/Symbol/"+SymName+"_2.png"; // Trạng thái tag = 1
     var url = "IO.html";
     $.getJSON(url, function(result){
         if (result[Tag] == 0)
@@ -500,5 +500,5 @@ function getTime() {
 setInterval(function(){
     IOField("test", "ss_i1");
     fn_SymbolStatus("ss_i1","sstc","ss_i1");
-    document.getElementById("ss_i1").src = "/images/Symbol/sstc_1.png";
+    document.getElementById("ss_i2").src = "../images/Symbol/dc_2.png";
 },1000);

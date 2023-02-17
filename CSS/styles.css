@@ -169,7 +169,7 @@ ul li:hover .dropdown-menu{
     position: absolute;
 }
 .object #ss_i1{
-    position: absolute;
+    /* position: absolute; */
     top: 715px;
     left: 167px;
 }
