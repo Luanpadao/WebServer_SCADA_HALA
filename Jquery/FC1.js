@@ -455,11 +455,10 @@ function setTag(tag, val) {
 function IOField(ObjectID, tag) {
     var url = "IO.html";
     $.getJSON(url, function (result) {
-        const currentTime = getTime();
-        console.log(currentTime);
-        console.log(result);
-        document.getElementById(ObjectID).value = result[tag];
-        document.getElementById("test1").value = currentTime;
+        if(ObjectID == "p1" || ObjectID == "p2" || ObjectID == "p3" )
+            document.getElementById(ObjectID).innerHTML = result[tag];
+        else    
+            document.getElementById(ObjectID).value = result[tag];
     });
 }
 
@@ -467,21 +466,25 @@ function IOField(ObjectID, tag) {
 // Hàm chức năng hiển thị trạng thái symbol
 function fn_SymbolStatus(ObjectID, SymName, Tag)
 {
-    var imglink_0 = "../images/Symbol/"+SymName+ "_1.png"; // Trạng thái tag = 0
-    var imglink_1 = "../images/Symbol/"+SymName+"_2.png"; // Trạng thái tag = 1
+    var imglink_0 = "../alo/images/Symbol/"+SymName+ "_1.png"; // Trạng thái tag = 0
+    var imglink_1 = "../alo/images/Symbol/"+SymName+"_2.png"; // Trạng thái tag = 1
     var url = "IO.html";
     $.getJSON(url, function(result){
-        if (result[Tag] == 0)
+        if (result[Tag] == false)
         {
+            if(ObjectID == "dc_i")
+                $("#mt_i").hide();
+            else if(ObjectID == "dc_o")
+                $("#mt_o").hide();
             document.getElementById(ObjectID).src = imglink_0;
         }
-        else if (result[Tag] == 1)
+        else if (result[Tag] == true)
         {
+            if(ObjectID == "dc_i")
+                $("#mt_i").show();
+            else if(ObjectID == "dc_o")
+                $("#mt_o").show();
             document.getElementById(ObjectID).src = imglink_1;
-        }
-        else
-        {
-            document.getElementById(ObjectID).src = imglink_0;
         }
     });
 }
@@ -498,7 +501,18 @@ function getTime() {
 
 // HIỂN THỊ DỮ LIỆU LÊN WEB cứ mỗi 1s
 setInterval(function(){
-    IOField("test", "ss_i1");
+    const currentTime = getTime();
+    console.log(currentTime);
     fn_SymbolStatus("ss_i1","sstc","ss_i1");
-    document.getElementById("ss_i2").src = "../images/Symbol/dc_2.png";
+    fn_SymbolStatus("ss_i2","sstc","ss_i2");
+    fn_SymbolStatus("ss_o","sstc","ss_o");
+    fn_SymbolStatus("dc_i","dc","dc_i");
+    fn_SymbolStatus("dc_o","dc","dc_o");
+    IOField("p1", "pos-x");
+    IOField("p2", "pos-y");
+    IOField("p3", "pos-z");
+    IOField("i1", "qrcode");
+    IOField("i2", "type");
+    IOField("i3", "name");
+    IOField("i4", "quantity");
 },1000);
