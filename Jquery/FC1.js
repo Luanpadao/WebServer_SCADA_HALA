@@ -12,7 +12,6 @@ $(document).ready(function()
     $("#mode_sa").hide();
     mode.placeholder = "MANUAL";
     $(".bt_import").css("background-color", "blue");
-    
     ///////////////////////////----------------------------------BUTTON INTRODUCE----------------------///////////////////////////////
     $("#bt_introduce").click(function(){
         $("#introduce").show();
@@ -466,27 +465,45 @@ function IOField(ObjectID, tag) {
 // Hàm chức năng hiển thị trạng thái symbol
 function fn_SymbolStatus(ObjectID, SymName, Tag)
 {
-    var imglink_0 = "../alo/images/Symbol/"+SymName+ "_1.png"; // Trạng thái tag = 0
-    var imglink_1 = "../alo/images/Symbol/"+SymName+"_2.png"; // Trạng thái tag = 1
-    var url = "IO.html";
-    $.getJSON(url, function(result){
-        if (result[Tag] == false)
-        {
-            if(ObjectID == "dc_i")
-                $("#mt_i").hide();
-            else if(ObjectID == "dc_o")
-                $("#mt_o").hide();
-            document.getElementById(ObjectID).src = imglink_0;
-        }
-        else if (result[Tag] == true)
-        {
-            if(ObjectID == "dc_i")
-                $("#mt_i").show();
-            else if(ObjectID == "dc_o")
-                $("#mt_o").show();
-            document.getElementById(ObjectID).src = imglink_1;
-        }
-    });
+    if(ObjectID.substr(0,1) == "n")
+    {
+        var obj = document.getElementById(ObjectID);
+        $.getJSON(url, function(result){
+            if (result[Tag] == false)
+            {
+                obj.classList.add('d-none');
+            }
+
+            else if(result[Tag] == true)
+            {
+                obj.classList.remove('d-none');
+            }
+        });
+    }
+    else
+    {
+        var imglink_0 = "../alo/images/Symbol/"+SymName+ "_1.png"; // Trạng thái tag = 0
+        var imglink_1 = "../alo/images/Symbol/"+SymName+"_2.png"; // Trạng thái tag = 1
+        var url = "IO.html";
+        $.getJSON(url, function(result){
+            if (result[Tag] == false)
+            {
+                if(ObjectID == "dc_i")
+                    $("#mt_i").hide();
+                else if(ObjectID == "dc_o")
+                    $("#mt_o").hide();
+                document.getElementById(ObjectID).src = imglink_0;
+            }
+            else if (result[Tag] == true)
+            {
+                if(ObjectID == "dc_i")
+                    $("#mt_i").show();
+                else if(ObjectID == "dc_o")
+                    $("#mt_o").show();
+                document.getElementById(ObjectID).src = imglink_1;
+            }
+        });
+    }
 }
 
 //LẪY DỮ LIỆU THỜI GIAN THỰC
@@ -502,12 +519,30 @@ function getTime() {
 // HIỂN THỊ DỮ LIỆU LÊN WEB cứ mỗi 1s
 setInterval(function(){
     const currentTime = getTime();
-    console.log(currentTime);
+    // console.log(currentTime);
     fn_SymbolStatus("ss_i1","sstc","ss_i1");
     fn_SymbolStatus("ss_i2","sstc","ss_i2");
     fn_SymbolStatus("ss_o","sstc","ss_o");
     fn_SymbolStatus("dc_i","dc","dc_i");
     fn_SymbolStatus("dc_o","dc","dc_o");
+    fn_SymbolStatus("n1"," ","pos_1");
+    fn_SymbolStatus("n2"," ","pos_2");
+    fn_SymbolStatus("n3"," ","pos_3");
+    fn_SymbolStatus("n4"," ","pos_4");
+    fn_SymbolStatus("n5"," ","pos_5");
+    fn_SymbolStatus("n6"," ","pos_6");
+    fn_SymbolStatus("n7"," ","pos_7");
+    fn_SymbolStatus("n8"," ","pos_8");
+    fn_SymbolStatus("n9"," ","pos_9");
+    fn_SymbolStatus("n10"," ","pos_10");
+    fn_SymbolStatus("n11"," ","pos_11");
+    fn_SymbolStatus("n12"," ","pos_12");
+    fn_SymbolStatus("n13"," ","pos_13");
+    fn_SymbolStatus("n14"," ","pos_14");
+    fn_SymbolStatus("n15"," ","pos_15");
+    fn_SymbolStatus("n16"," ","pos_16");
+    fn_SymbolStatus("n17"," ","pos_17");
+    fn_SymbolStatus("n18"," ","pos_18");
     IOField("p1", "pos-x");
     IOField("p2", "pos-y");
     IOField("p3", "pos-z");
