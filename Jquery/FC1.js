@@ -12,6 +12,11 @@ $(document).ready(function()
     $("#mode_sa").hide();
     mode.placeholder = "MANUAL";
     $(".bt_import").css("background-color", "blue");
+    IOField("speedx", "speedx");
+    IOField("speedy", "speedy");
+    IOField("speedz", "speedz");
+    $("#mt_i").hide();
+    $("#mt_o").hide();
     ///////////////////////////----------------------------------BUTTON INTRODUCE----------------------///////////////////////////////
     $("#bt_introduce").click(function(){
         $("#introduce").show();
@@ -151,13 +156,6 @@ $(document).ready(function()
         $("body,html").animate({scrollTop:0},500);
         return false;
     });
-    // $("#bt_run").mousedown(function(){
-    //     setTag("tag_Bool",true);
-    //     IOField("pos","tag_Integer");
-    // });
-    // $("#bt_run").mouseup(function(){
-    //     setTag("tag_Bool",false);
-    // });
 ///////////////////////////----------------------------------SW SEMI-AUTO/AUTO----------------------///////////////////////////////
     // $("#switch_mode").change(function(){
     //     sw = !sw;
@@ -403,7 +401,7 @@ $(document).ready(function()
         $(this).css("background-color", "#6c757d");
         setTag("bt_sh",false);
     })
-///////////////////////////---------------------------------- NÚT SET HOME ----------------------///////////////////////////////
+///////////////////////////---------------------------------- NÚT HOME ----------------------///////////////////////////////
     $(".bt_home").mousedown(function()
     {
         $(this).css("background-color", "green");
@@ -419,7 +417,7 @@ $(document).ready(function()
         $(this).css("background-color", "#6c757d");
         setTag("bt_home",false);
     })
-///////////////////////////---------------------------------- NÚT SET HOME ----------------------///////////////////////////////
+///////////////////////////---------------------------------- NÚT HOME DEFAUT ----------------------///////////////////////////////
     $(".bt_hd").mousedown(function()
     {
         $(this).css("background-color", "green");
@@ -435,18 +433,39 @@ $(document).ready(function()
         $(this).css("background-color", "#6c757d");
         setTag("bt_hd",false);
     })
+    ///////////////////////////---------------------------------- NÚT SET UP ----------------------///////////////////////////////
+    $(".bt_setup").mousedown(function()
+    {
+        $(this).css("background-color", "green");
+        setTag("speed_x",speedx.value/5);
+        setTag("speed_y",speedy.value/5);
+        setTag("speed_z",speedz.value/5);
+        // setTag("bt_setup",true);
+    })
+    $(".bt_setup").mouseup(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        alert("Thiết lập tốc độ thành công");
+        // setTag("bt_setup",false);
+    })
+    $(".bt_setup").mouseout(function()
+    {
+        $(this).css("background-color", "#6c757d");
+        setTag("bt_setup",false);
+    })
 })
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //----------------------------------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------------------------------//
+//--------------------------------------------    CHƯƠNG TRÌNH CON      ------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------//
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Hàm chức năng ghi giá trị vào tag
 function setTag(tag, val) {
-    var tag_Link = '"Web_comm".' + tag;
+    var tag_Link = '"Web_comm".'+tag;
     var url = "IO.html";
     sdata = tag_Link + '=' + val;
+    console.log(sdata);
     $.post(url, sdata, function (result) { });
 }
 
@@ -456,7 +475,9 @@ function IOField(ObjectID, tag) {
     $.getJSON(url, function (result) {
         if(ObjectID == "p1" || ObjectID == "p2" || ObjectID == "p3" )
             document.getElementById(ObjectID).innerHTML = result[tag];
-        else    
+        else if(ObjectID == "speedx" || ObjectID == "speedy" || ObjectID == "speedz")
+        document.getElementById(ObjectID).value = result[tag] * 5;
+        else   
             document.getElementById(ObjectID).value = result[tag];
     });
 }
@@ -482,8 +503,8 @@ function fn_SymbolStatus(ObjectID, SymName, Tag)
     }
     else
     {
-        var imglink_0 = "../alo/images/Symbol/"+SymName+ "_1.png"; // Trạng thái tag = 0
-        var imglink_1 = "../alo/images/Symbol/"+SymName+"_2.png"; // Trạng thái tag = 1
+        var imglink_0 = "https://github.com/Luanpadao/WebServer_SCADA_HALA/blob/develop/images/Symbol/"+SymName+"_1.png?raw=true"; // Trạng thái tag = 0
+        var imglink_1 = "https://github.com/Luanpadao/WebServer_SCADA_HALA/blob/develop/images/Symbol/"+SymName+"_2.png?raw=true"; // Trạng thái tag = 1
         var url = "IO.html";
         $.getJSON(url, function(result){
             if (result[Tag] == false)
@@ -543,11 +564,7 @@ setInterval(function(){
     fn_SymbolStatus("n16"," ","pos_16");
     fn_SymbolStatus("n17"," ","pos_17");
     fn_SymbolStatus("n18"," ","pos_18");
-    IOField("p1", "pos-x");
-    IOField("p2", "pos-y");
-    IOField("p3", "pos-z");
-    IOField("i1", "qrcode");
-    IOField("i2", "type");
-    IOField("i3", "name");
-    IOField("i4", "quantity");
+    IOField("p1", "pos_x");
+    IOField("p2", "pos_y");
+    IOField("p3", "pos_z");
 },1000);
